@@ -614,7 +614,7 @@ function renderRekap(){
 }
 
 function renderTop5(tbodyId, data){
-  const top = [...data].sort((a,b)=>b.persen-a.persen).slice(0,5);
+  const top = [...data].sort((a,b)=>b.persen-a.persen||new Date(a.timestamp)-new Date(b.timestamp)).slice(0,5);
   const medalSvg = [
     `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="14" r="7" fill="#FFD700" stroke="#B8860B" stroke-width="1.5"/><path d="M8 7.5L6 2h12l-2 5.5" fill="#FFD700" stroke="#B8860B" stroke-width="1.2" stroke-linejoin="round"/><text x="12" y="18" text-anchor="middle" font-size="7" font-weight="700" fill="#7A5900" font-family="sans-serif">1</text></svg>`,
     `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="14" r="7" fill="#C0C0C0" stroke="#888" stroke-width="1.5"/><path d="M8 7.5L6 2h12l-2 5.5" fill="#C0C0C0" stroke="#888" stroke-width="1.2" stroke-linejoin="round"/><text x="12" y="18" text-anchor="middle" font-size="7" font-weight="700" fill="#555" font-family="sans-serif">2</text></svg>`,
